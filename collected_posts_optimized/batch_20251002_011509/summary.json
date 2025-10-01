@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-10-02 01:18:27",
+  "url": "https://www.xiaohongshu.com/explore",
+  "total_posts": 3,
+  "output_dir": "collected_posts_optimized/batch_20251002_011509",
+  "mode": "sequential",
+  "use_vision": false,
+  "headless": false
+}
