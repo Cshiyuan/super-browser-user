@@ -26,11 +26,11 @@
 # 依赖导入
 # ============================================================
 
-from browser_use import Agent, Browser, BrowserProfile
+from browser_use import Agent, Browser
 # Agent: browser-use 的核心类，负责执行自动化任务
 # Browser: 浏览器实例管理器
-# BrowserProfile: 浏览器全局配置
-# BrowserContextConfig: 浏览器上下文配置（单个页面会话）
+# 注意：browser-use 最新版本移除了 BrowserConfig 和 BrowserContextConfig
+# 配置现在通过 Browser 构造函数和 new_context() 方法的参数传递
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 # ChatGoogleGenerativeAI: LangChain 封装的 Google Gemini API
@@ -137,19 +137,16 @@ class XiaohongshuCollector:
         # ============================================================
         # 创建浏览器配置
         # ============================================================
-        self.browser_config = BrowserProfile(
-            headless=False,  # 是否无头模式（False=显示浏览器窗口）
-            disable_security=True,  # 禁用安全限制（避免证书错误）
-
-            # Chromium 性能优化参数
-            # 这些参数可以减少启动时间和资源占用
-        )
+        # 注意：browser-use 最新版本直接通过 Browser 构造函数传递配置参数
         # 性能提升效果：
         # - 启动时间: 减少约 50%
         # - 内存占用: 减少约 30%
         # - CPU 使用: 减少约 20%
 
-        self.browser = Browser(browser_profile=self.browser_config)
+        self.browser = Browser(
+            headless=False,  # 是否无头模式（False=显示浏览器窗口）
+            disable_security=True,  # 禁用安全限制（避免证书错误）
+        )
         self.context = None
 
         # 输出目录
@@ -540,12 +537,9 @@ class XiaohongshuCollector:
     async def collect_posts(self):
         """主收集流程"""
         # 创建浏览器上下文（始终可见）
+        # 注意：browser-use 最新版本的 Browser 本身就是上下文
         if self.context is None:
-            self.context = await self.browser.new_context(
-                config=BrowserProfile(
-                    headless=False,  # 始终显示浏览器
-                )
-            )
+            self.context = self.browser
 
         # 创建批次目录
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

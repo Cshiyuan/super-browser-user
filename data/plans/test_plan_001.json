@@ -1,0 +1,121 @@
+{
+  "plan_id": "test_plan_001",
+  "user_id": "test_user",
+  "destination": "成都",
+  "days": 3,
+  "status": "draft",
+  "created_at": "2025-10-03T08:00:53.577594",
+  "itinerary": {
+    "destination": "成都",
+    "days": 3,
+    "day_plans": [
+      {
+        "day": 1,
+        "date": "2024-10-10",
+        "activities": [
+          {
+            "time": "09:00",
+            "type": "景点",
+            "name": "宽窄巷子",
+            "duration": "2小时",
+            "description": "感受成都传统建筑风格，品尝当地小吃",
+            "cost": 50.0
+          },
+          {
+            "time": "12:00",
+            "type": "美食",
+            "name": "小龙坎火锅",
+            "duration": "1.5小时",
+            "description": "品尝正宗成都火锅",
+            "cost": 120.0
+          },
+          {
+            "time": "14:30",
+            "type": "景点",
+            "name": "人民公园",
+            "duration": "2小时",
+            "description": "体验成都慢生活，喝盖碗茶",
+            "cost": 30.0
+          },
+          {
+            "time": "18:00",
+            "type": "美食",
+            "name": "锦里小吃街",
+            "duration": "2小时",
+            "description": "品尝各种成都小吃",
+            "cost": 80.0
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2024-10-11",
+        "activities": [
+          {
+            "time": "08:00",
+            "type": "景点",
+            "name": "成都大熊猫基地",
+            "duration": "3小时",
+            "description": "观看可爱的大熊猫，最佳时间是早上",
+            "cost": 55.0
+          },
+          {
+            "time": "12:00",
+            "type": "美食",
+            "name": "陈麻婆豆腐",
+            "duration": "1小时",
+            "description": "品尝百年老店",
+            "cost": 80.0
+          },
+          {
+            "time": "14:00",
+            "type": "购物",
+            "name": "春熙路",
+            "duration": "3小时",
+            "description": "成都最繁华的商业街",
+            "cost": 200.0
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2024-10-12",
+        "activities": [
+          {
+            "time": "09:00",
+            "type": "景点",
+            "name": "武侯祠",
+            "duration": "2小时",
+            "description": "三国文化圣地",
+            "cost": 50.0
+          },
+          {
+            "time": "12:00",
+            "type": "美食",
+            "name": "龙抄手",
+            "duration": "1小时",
+            "description": "品尝成都传统小吃",
+            "cost": 60.0
+          },
+          {
+            "time": "14:00",
+            "type": "景点",
+            "name": "杜甫草堂",
+            "duration": "2小时",
+            "description": "诗圣杜甫的故居",
+            "cost": 50.0
+          }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "transportation": 300.0,
+    "accommodation": 900.0,
+    "food": 600.0,
+    "tickets": 300.0,
+    "shopping": 200.0,
+    "other": 150.0,
+    "total": 2450.0
+  }
+}
